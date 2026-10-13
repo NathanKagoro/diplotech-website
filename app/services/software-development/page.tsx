@@ -1,163 +1,108 @@
-import { Header } from '@/components/Header'
-import { Footer } from '@/components/Footer'
-import { Hero } from '@/components/Hero'
-import { SectionHeading } from '@/components/SectionHeading'
-import { CTABanner } from '@/components/CTABanner'
+import { Dossier, Enclosure, Ends, Schedule } from '@/components/Dossier'
 
 export const metadata = {
-  title: 'Software Development & Consultancy - Diplotech Solutions',
-  description: 'Custom software solutions and digital transformation for governments and institutions.',
+  title: 'Annex A: Software development and consultancy',
+  description:
+    'Annex A of the Diplotech concept: bespoke software and transformation advice for governments and institutions.',
 }
 
-// Renders software development service details.
 export default function SoftwareDevelopmentPage() {
   return (
-    <>
-      <Header />
-      <main className="pt-20">
-        <Hero
-          heading="Software solutions and strategic consulting for mission-critical environments"
-          subheading="From custom development to transformation advisory, we build digital capabilities that serve public good."
-          background="teal"
-          imageSrc="/headers/services-software.jpg"
-          imageAlt="Software engineering and digital architecture"
-          imagePriority
+    <Dossier
+      tab="services"
+      annex="software-development"
+      cable={{
+        reference: 'DTS/SVC/003-A',
+        to: 'Heads of digital, programme directors',
+        subject: 'Annex A. Software development and consultancy',
+      }}
+    >
+      <h1>Software development and consultancy</h1>
+      <p className="standfirst">
+        Bespoke systems for institutions whose work does not fit a product off the shelf, and advice
+        on what to build, buy or leave alone.
+      </p>
+
+      <section className="block" aria-labelledby="deliver">
+        <h2 id="deliver">What would be delivered</h2>
+        <Schedule
+          rows={[
+            { term: 'Bespoke software', detail: 'Applications shaped to the client’s casework and its security requirements.' },
+            { term: 'Systems planning', detail: 'Architecture and sequencing for systems that have to work together.' },
+            { term: 'Transformation advice', detail: 'Guidance on modernising systems and the ways of working around them.' },
+            { term: 'AI-assisted workflows', detail: 'Automation and decision support, with a named person accountable for each decision.' },
+            { term: 'Data and reporting', detail: 'Reporting tools that answer the questions managers ask in practice.' },
+            { term: 'Service and process design', detail: 'Research with the people who will use the system, before and during the build.' },
+          ]}
         />
+      </section>
 
-        {/* What We Offer */}
-        <section className="section-padding">
-          <div className="container-x">
-            <SectionHeading
-              eyebrow="CAPABILITIES"
-              heading="What we deliver"
-            />
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { title: 'Custom Software Development', desc: 'Bespoke applications tailored to your operational complexity and security requirements' },
-                { title: 'Systems Planning', desc: 'Architecture and strategy for integrated digital solutions' },
-                { title: 'Digital Transformation Advisory', desc: 'Guidance on modernizing systems and operating models' },
-                { title: 'AI-Enabled Workflows', desc: 'Intelligent automation and decision-support capabilities' },
-                { title: 'Data-Driven Tools', desc: 'Analytics platforms and reporting systems for informed decision-making' },
-                { title: 'UX & Process Design', desc: 'User-centered approaches to technology implementation' },
-              ].map((item, i) => (
-                <div key={i} className="bg-surface-light p-6 rounded-lg border border-border card-lift surface-pattern">
-                  <h4 className="text-heading font-display font-bold mb-2">{item.title}</h4>
-                  <p className="text-body text-sm">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+      <section className="block" aria-labelledby="examples">
+        <h2 id="examples">Illustrative applications</h2>
+        <p>Examples of the kind of work intended. None has been carried out.</p>
+        <div className="enclosures">
+          <Enclosure
+            label="Example 1"
+            title="Visa processing"
+            note="Case handling for consular sections."
+            items={['Bespoke development', 'Security designed in from the start', 'Rules for more than one jurisdiction']}
+          />
+          <Enclosure
+            label="Example 2"
+            title="Decision support"
+            note="Bringing an institution’s own data to the people who decide."
+            items={['Connections to existing data', 'Reporting dashboards', 'Clear provenance for every figure']}
+          />
+          <Enclosure
+            label="Example 3"
+            title="Back-office digitisation"
+            note="Replacing paper and spreadsheets in internal processes."
+            items={['Process mapping', 'Automation of routine steps', 'Links to older systems']}
+          />
+          <Enclosure
+            label="Example 4"
+            title="Stakeholder communication"
+            note="Shared working space for several organisations."
+            items={['Multi-party access', 'Secure messaging', 'Agreed workflows']}
+          />
+        </div>
+      </section>
 
-        {/* Use Cases */}
-        <section className="section-padding bg-surface-light">
-          <div className="container-x">
-            <SectionHeading
-              eyebrow="USE CASES"
-              heading="Applications across sectors"
-            />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: 'Visa Processing Systems',
-                  desc: 'Efficient, secure systems for diplomatic and consular operations',
-                  services: ['Custom development', 'Security-first architecture', 'Multi-jurisdiction compliance'],
-                },
-                {
-                  title: 'Decision-Support Tools',
-                  desc: 'Data platforms enabling informed institutional decision-making',
-                  services: ['Analytics integration', 'Reporting dashboards', 'Real-time insights'],
-                },
-                {
-                  title: 'Internal Workflow Digitization',
-                  desc: 'Modernizing back-office and operational processes',
-                  services: ['Process mapping', 'Automation', 'Integration with legacy systems'],
-                },
-                {
-                  title: 'Stakeholder Communication Platforms',
-                  desc: 'Secure, collaborative tools for institutional stakeholders',
-                  services: ['Multi-party platforms', 'Secure messaging', 'Workflow automation'],
-                },
-              ].map((useCase, i) => (
-                <div key={i} className="bg-white p-8 rounded-lg border border-border card-lift">
-                  <h4 className="text-heading font-display font-bold mb-2">{useCase.title}</h4>
-                  <p className="text-body mb-4">{useCase.desc}</p>
-                  <ul className="space-y-2">
-                    {useCase.services.map((service, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-body text-sm">
-                        <span className="text-brand-gold font-bold">✓</span>
-                        <span>{service}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+      <section className="block" aria-labelledby="approach">
+        <h2 id="approach">Order of work</h2>
+        <ol className="steps">
+          <li>
+            <h3>Discover</h3>
+            <p>Learn the context, the constraints and the existing systems.</p>
+          </li>
+          <li>
+            <h3>Design</h3>
+            <p>Agree the architecture and the first release with the client.</p>
+          </li>
+          <li>
+            <h3>Develop</h3>
+            <p>Build in short stages and show working software at the end of each.</p>
+          </li>
+          <li>
+            <h3>Deploy</h3>
+            <p>Roll out carefully, train the users and stay for the first months.</p>
+          </li>
+        </ol>
+      </section>
 
-        {/* Delivery Approach */}
-        <section className="section-padding">
-          <div className="container-x">
-            <SectionHeading
-              eyebrow="OUR APPROACH"
-              heading="How we deliver"
-              description="Our methodology balances agility, security, and strategic alignment."
-            />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="space-y-6">
-                  {[
-                    { step: 'Discover', desc: 'Deep understanding of your context, challenges, and constraints' },
-                    { step: 'Design', desc: 'Collaborative architecture and solution design' },
-                    { step: 'Develop', desc: 'Iterative development with regular stakeholder feedback' },
-                    { step: 'Deploy', desc: 'Careful rollout with training and sustained support' },
-                  ].map((item, i) => (
-                    <div key={i} className="flex gap-4">
-                      <div className="w-12 h-12 bg-brand-dark text-white rounded flex items-center justify-center flex-shrink-0 font-bold">
-                        {i + 1}
-                      </div>
-                      <div>
-                        <h4 className="text-heading font-display font-bold mb-1">{item.step}</h4>
-                        <p className="text-body text-sm">{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="bg-brand-softer p-8 rounded-lg surface-pattern">
-                <h4 className="text-heading font-display font-bold mb-6">Key Commitments</h4>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <span className="text-brand-gold font-bold text-xl">•</span>
-                    <span className="text-body"><strong>Security first:</strong> Government-grade security and compliance</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-brand-gold font-bold text-xl">•</span>
-                    <span className="text-body"><strong>Transparency:</strong> Clear communication and regular updates</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-brand-gold font-bold text-xl">•</span>
-                    <span className="text-body"><strong>Sustainability:</strong> Solutions built for long-term maintenance</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-brand-gold font-bold text-xl">•</span>
-                    <span className="text-body"><strong>Flexibility:</strong> Responsive to changing needs and timelines</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <CTABanner
-          headline="Ready to discuss your software strategy?"
-          buttonText="Start a Conversation"
-          buttonHref="/contact"
+      <section className="block" aria-labelledby="undertakings">
+        <h2 id="undertakings">Undertakings</h2>
+        <Schedule
+          rows={[
+            { term: 'Security first', detail: 'Designed to the client’s own standard and reviewed against it.' },
+            { term: 'Plain reporting', detail: 'Regular updates that say what is late as well as what is done.' },
+            { term: 'Maintainability', detail: 'Documented, tested and built so that another team could take it over.' },
+            { term: 'Flexibility', detail: 'Plans revised openly when needs or dates change.' },
+          ]}
         />
-      </main>
-      <Footer />
-    </>
+      </section>
+
+      <Ends href="/services/it-recruitment/" label="Turn to Annex B: Recruitment" />
+    </Dossier>
   )
 }

@@ -1,148 +1,92 @@
-import { Header } from '@/components/Header'
-import { Footer } from '@/components/Footer'
-import { Hero } from '@/components/Hero'
-import { SectionHeading } from '@/components/SectionHeading'
-import { CTABanner } from '@/components/CTABanner'
+import { Dossier, Enclosure, Ends, Paras, Schedule } from '@/components/Dossier'
 
 export const metadata = {
-  title: 'IT Recruitment & Project Management - Diplotech Solutions',
-  description: 'Technical recruitment and project delivery for complex government and institutional environments.',
+  title: 'Annex B: IT recruitment and project management',
+  description:
+    'Annex B of the Diplotech concept: technical recruitment and project management for government and institutional work.',
 }
 
-// Renders IT recruitment services and process.
 export default function ITRecruitmentPage() {
   return (
-    <>
-      <Header />
-      <main className="pt-20">
-        <Hero
-          heading="Finding the right talent and keeping delivery on track"
-          subheading="We connect elite technical professionals with mission-critical projects and help organizations scale their teams."
-          background="teal"
-          imageSrc="/headers/services-recruitment.jpg"
-          imageAlt="Recruitment strategy and project planning"
+    <Dossier
+      tab="services"
+      annex="it-recruitment"
+      cable={{
+        reference: 'DTS/SVC/003-B',
+        to: 'Heads of delivery, HR directors',
+        subject: 'Annex B. IT recruitment and project management',
+      }}
+    >
+      <h1>IT recruitment and project management</h1>
+      <p className="standfirst">
+        Finding technical staff for institutional work, and managing the delivery they join so that
+        a good hire is not wasted on a drifting project.
+      </p>
+
+      <section className="block" aria-labelledby="pillars">
+        <h2 id="pillars">What would be delivered</h2>
+        <Schedule
+          rows={[
+            { term: 'Technical recruitment', detail: 'Finding specialists for environments with vetting, protocol and long timescales.' },
+            { term: 'Project coordination', detail: 'Planning and scheduling from start to handover.' },
+            { term: 'Delivery oversight', detail: 'Checking quality and keeping the parties aligned.' },
+            { term: 'Stakeholder reporting', detail: 'Status reports written to be read by a busy principal.' },
+            { term: 'Team scaling', detail: 'Adding and releasing people as the work requires.' },
+          ]}
         />
+      </section>
 
-        {/* Service Pillars */}
-        <section className="section-padding">
-          <div className="container-x">
-            <SectionHeading
-              eyebrow="SERVICE PILLARS"
-              heading="Integrated talent and delivery solutions"
-            />
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-              {[
-                { title: 'Technical Recruitment', desc: 'Sourcing specialized talent for complex environments' },
-                { title: 'Project Coordination', desc: 'End-to-end delivery oversight and scheduling' },
-                { title: 'Delivery Oversight', desc: 'Quality assurance and stakeholder alignment' },
-                { title: 'Stakeholder Communication', desc: 'Clear reporting and status management' },
-                { title: 'Team Scaling', desc: 'Flexible resource management and augmentation' },
-              ].map((pillar, i) => (
-                <div key={i} className="bg-surface-light p-6 rounded-lg border border-border text-center card-lift surface-pattern">
-                  <h4 className="text-heading font-display font-bold mb-3">{pillar.title}</h4>
-                  <p className="text-body text-sm">{pillar.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+      <section className="block" aria-labelledby="options">
+        <h2 id="options">Forms of engagement</h2>
+        <div className="enclosures">
+          <Enclosure
+            label="Option 1"
+            title="Contract staffing"
+            note="Short-term or project placements for particular skills."
+            items={['Agreed duration', 'Quick start', 'Matched to a specific need']}
+          />
+          <Enclosure
+            label="Option 2"
+            title="Permanent placement"
+            note="Search and selection for established posts."
+            items={['Vetting of candidates', 'Help with induction', 'Follow-up after the start date']}
+          />
+          <Enclosure
+            label="Option 3"
+            title="Project management"
+            note="A project manager for the length of the project, without a permanent hire."
+            items={['Delivery oversight', 'A maintained risk register', 'A realistic timetable']}
+          />
+          <Enclosure
+            label="Option 4"
+            title="Combined delivery"
+            note="Recruitment, project management and technical support under one agreement."
+            items={['One point of contact', 'Fewer hand-offs', 'Accountability from start to finish']}
+          />
+        </div>
+      </section>
 
-        {/* Engagement Options */}
-        <section className="section-padding bg-surface-light">
-          <div className="container-x">
-            <SectionHeading
-              eyebrow="ENGAGEMENT MODELS"
-              heading="Flexible partnership options"
-            />
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: 'Contract Staffing',
-                  desc: 'Short-term or project-based placements for specialized needs',
-                  benefits: ['Flexible duration', 'Rapid onboarding', 'Specific skill matching'],
-                },
-                {
-                  title: 'Permanent Placement Support',
-                  desc: 'Full recruitment and hiring support for permanent roles',
-                  benefits: ['Full vetting', 'Onboarding support', 'Performance tracking'],
-                },
-                {
-                  title: 'Project-Based PM',
-                  desc: 'Project management support without permanent hiring',
-                  benefits: ['Delivery oversight', 'Risk management', 'Timeline confidence'],
-                },
-                {
-                  title: 'Hybrid Delivery Support',
-                  desc: 'Combined recruitment, PM, and technical support',
-                  benefits: ['Integrated approach', 'Reduced complexity', 'End-to-end accountability'],
-                },
-              ].map((option, i) => (
-                <div key={i} className="bg-white p-8 rounded-lg border border-border card-lift">
-                  <h4 className="text-heading font-display font-bold mb-2">{option.title}</h4>
-                  <p className="text-body mb-4">{option.desc}</p>
-                  <ul className="space-y-2">
-                    {option.benefits.map((benefit, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-body text-sm">
-                        <span className="text-brand-gold font-bold">✓</span>
-                        <span>{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Why It Matters */}
-        <section className="section-padding">
-          <div className="container-x">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-heading font-display font-bold mb-6">Why talent and delivery matter together</h2>
-                <p className="text-lg text-body mb-4">
-                  The difference between project success and failure often comes down to having the right people with the right skills in the right roles, supported by clear delivery oversight.
-                </p>
-                <p className="text-lg text-body mb-4">
-                  Our integrated approach means we don't just find great talent—we ensure they're set up to succeed through strong project management, clear communication, and performance monitoring.
-                </p>
-                <p className="text-lg text-body">
-                  This reduces delivery risk and helps organizations avoid costly team scaling mistakes.
-                </p>
-              </div>
-              <div className="bg-brand-softer p-8 rounded-lg surface-pattern">
-                <h4 className="text-heading font-display font-bold mb-6">Our Commitment</h4>
-                <div className="space-y-4">
-                  <div>
-                    <h5 className="font-display font-bold text-heading mb-2">Quality First</h5>
-                    <p className="text-sm text-body">Rigorous vetting and skill assessment for every placement</p>
-                  </div>
-                  <div>
-                    <h5 className="font-display font-bold text-heading mb-2">Cultural Fit</h5>
-                    <p className="text-sm text-body">Understanding organizational values and working styles</p>
-                  </div>
-                  <div>
-                    <h5 className="font-display font-bold text-heading mb-2">Delivery Confidence</h5>
-                    <p className="text-sm text-body">Proactive PM and risk management throughout the engagement</p>
-                  </div>
-                  <div>
-                    <h5 className="font-display font-bold text-heading mb-2">Transparent Reporting</h5>
-                    <p className="text-sm text-body">Clear status updates and performance metrics</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <CTABanner
-          headline="Ready to scale your team?"
-          buttonText="Let's Talk About Your Needs"
-          buttonHref="/contact"
+      <section className="block" aria-labelledby="why">
+        <h2 id="why">Why the two belong together</h2>
+        <Paras
+          items={[
+            {
+              lead: 'Observation',
+              text: 'Projects more often fail on people and coordination than on technology: the wrong skills, unclear roles, nobody watching the dates.',
+            },
+            {
+              lead: 'Consequence',
+              text: 'A recruiter who is also answerable for delivery has a reason to place people who will succeed in the role, and to notice early when they are not being given the means.',
+            },
+            {
+              lead: 'Undertaking',
+              text: 'Candidates assessed on their skills and on how they work with others. Risks raised before they become delays. Reports that say plainly where things stand.',
+            },
+          ]}
         />
-      </main>
-      <Footer />
-    </>
+      </section>
+
+      <Ends href="/services/client-support/" label="Turn to Annex C: Support" />
+    </Dossier>
   )
 }

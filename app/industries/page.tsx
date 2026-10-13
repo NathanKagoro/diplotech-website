@@ -1,170 +1,149 @@
-import { Header } from '@/components/Header'
-import { Footer } from '@/components/Footer'
-import { Hero } from '@/components/Hero'
-import { SectionHeading } from '@/components/SectionHeading'
-import { IndustryCard } from '@/components/IndustryCard'
-import { CTABanner } from '@/components/CTABanner'
+import { Dossier, Enclosure, Ends, Schedule } from '@/components/Dossier'
 
 export const metadata = {
-  title: 'Industries & Sectors - Diplotech Solutions',
-  description: 'Sector-specific solutions for government, NGOs, private sector, and international institutions.',
+  title: 'Sectors',
+  description:
+    'The four sectors the Diplotech concept addresses: government, NGOs and development, private enterprise, and international institutions.',
 }
 
-// Renders industry focus areas and delivery model.
-export default function IndustriesPage() {
+const SECTORS = [
+  {
+    id: 'government',
+    title: 'Government and public sector',
+    note: 'Modernising how services reach the public and how departments decide and operate.',
+    groups: [
+      {
+        title: 'Digital service delivery',
+        note: 'Public-facing services.',
+        items: ['Visa and immigration platforms', 'Permits and licensing', 'Public information portals', 'Joining services up'],
+      },
+      {
+        title: 'Internal operations',
+        note: 'Back-office and administrative work.',
+        items: ['Workflow automation', 'Decision-support systems', 'Links between departments', 'Performance reporting'],
+      },
+      {
+        title: 'Strategic planning',
+        note: 'Policy and organisational development.',
+        items: ['Transformation roadmaps', 'Technology strategy', 'Change management', 'Training and adoption'],
+      },
+    ],
+  },
+  {
+    id: 'ngo',
+    title: 'NGOs and development organisations',
+    note: 'Technology that serves the mission, strengthens accountability and makes joint work easier.',
+    groups: [
+      {
+        title: 'Programme management',
+        note: 'Programmes run with several partners.',
+        items: ['Beneficiary registers', 'Partner coordination', 'Results monitoring', 'Donor reporting'],
+      },
+      {
+        title: 'Organisational systems',
+        note: 'The machinery of the organisation itself.',
+        items: ['Finance and grant management', 'HR and team administration', 'Knowledge management', 'Management reporting'],
+      },
+      {
+        title: 'Advocacy and communication',
+        note: 'Reaching communities and the public.',
+        items: ['Community engagement tools', 'Data visualisation', 'Campaign support', 'Public reporting'],
+      },
+    ],
+  },
+  {
+    id: 'enterprise',
+    title: 'Private sector and enterprise',
+    note: 'For firms that work with public institutions or in regulated, cross-border settings.',
+    groups: [
+      {
+        title: 'Digital transformation',
+        note: 'Operations and customer service.',
+        items: ['Replacing legacy systems', 'Customer service platforms', 'Data analysis', 'Automation'],
+      },
+      {
+        title: 'Strategic consulting',
+        note: 'Responding to shifts in markets and technology.',
+        items: ['Business model review', 'Technology strategy', 'Entering new markets', 'Risk management'],
+      },
+      {
+        title: 'Talent and scaling',
+        note: 'Building teams.',
+        items: ['Technical recruitment', 'Team formation', 'Project leadership', 'Organisational development'],
+      },
+    ],
+  },
+  {
+    id: 'international',
+    title: 'International institutions and diplomatic bodies',
+    note: 'Systems, strategy and operations for organisations that answer to many states at once.',
+    groups: [
+      {
+        title: 'Institutional systems',
+        note: 'Infrastructure for multinational operations.',
+        items: ['Secure communication', 'Working in several languages', 'Compliance records', 'Stakeholder engagement'],
+      },
+      {
+        title: 'Governance and transparency',
+        note: 'Supporting accountability.',
+        items: ['Public reporting platforms', 'Open data', 'Records of decisions', 'Audit trails'],
+      },
+      {
+        title: 'Collaboration',
+        note: 'Work between institutions.',
+        items: ['Shared platforms', 'Knowledge exchange', 'Programme coordination', 'Measuring results'],
+      },
+    ],
+  },
+]
+
+export default function SectorsPage() {
   return (
-    <>
-      <Header />
-      <main className="pt-20">
-        <Hero
-          heading="Solutions shaped around sector realities"
-          subheading="We bring sector expertise to every engagement, understanding the unique challenges, stakeholders, and constraints of different industries."
-          background="teal"
-          imageSrc="/headers/industries.jpg"
-          imageAlt="Sector expertise"
-        />
+    <Dossier
+      tab="sectors"
+      cable={{
+        reference: 'DTS/SEC/004',
+        to: 'Sector leads',
+        subject: 'Sectors addressed and the work intended in each',
+      }}
+    >
+      <h1>Sectors</h1>
+      <p className="standfirst">
+        Four kinds of organisation, each with its own stakeholders, rules and pace. The work is
+        shaped to the sector before it is shaped to the technology.
+      </p>
 
-        {/* Sectors */}
-        <section className="section-padding">
-          <div className="container-x">
-            <SectionHeading
-              eyebrow="KEY SECTORS"
-              heading="Who we serve"
-            />
-
-            {/* Government */}
-            <div className="mb-16 content-theme-panel-soft p-8">
-              <h3 className="text-heading font-display font-bold text-2xl mb-4">Government & Public Sector</h3>
-              <p className="text-lg text-body mb-8 max-w-3xl">
-                We help governments modernize service delivery, improve decision-making, and optimize operations through technology and strategic consulting.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <IndustryCard
-                  title="Digital Service Delivery"
-                  description="Modernizing citizen-facing government services"
-                  items={['Visa and immigration platforms', 'Permit and licensing systems', 'Public information portals', 'Service integration']}
-                />
-                <IndustryCard
-                  title="Internal Operations"
-                  description="Optimizing back-office and administrative processes"
-                  items={['Workflow automation', 'Decision-support systems', 'Inter-departmental integration', 'Performance analytics']}
-                />
-                <IndustryCard
-                  title="Strategic Planning"
-                  description="Supporting policy and organizational development"
-                  items={['Digital transformation roadmaps', 'Technology strategy', 'Change management', 'Training and adoption']}
-                />
-              </div>
-            </div>
-
-            {/* NGOs & Development */}
-            <div className="mb-16 content-theme-panel-soft p-8">
-              <h3 className="text-heading font-display font-bold text-2xl mb-4">NGOs & Development Organizations</h3>
-              <p className="text-lg text-body mb-8 max-w-3xl">
-                We support NGOs in amplifying impact through technology that aligns with mission, strengthens accountability, and enables collaboration.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <IndustryCard
-                  title="Programme Management"
-                  description="Technology for complex multi-partner programmes"
-                  items={['Beneficiary tracking', 'Partner coordination', 'Results monitoring', 'Donor reporting']}
-                />
-                <IndustryCard
-                  title="Organizational Systems"
-                  description="Tools for NGO growth and sustainability"
-                  items={['Finance and grant management', 'HR and team management', 'Knowledge management', 'Strategic analytics']}
-                />
-                <IndustryCard
-                  title="Advocacy & Communication"
-                  description="Platforms for stakeholder engagement"
-                  items={['Community engagement tools', 'Data visualization', 'Advocacy campaigns', 'Public reporting']}
-                />
-              </div>
-            </div>
-
-            {/* Private Sector */}
-            <div className="mb-16 content-theme-panel-soft p-8">
-              <h3 className="text-heading font-display font-bold text-2xl mb-4">Private Sector & Enterprise</h3>
-              <p className="text-lg text-body mb-8 max-w-3xl">
-                We help private organizations innovate through digital transformation, strategic consulting, and talent solutions for complex environments.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <IndustryCard
-                  title="Digital Transformation"
-                  description="Modernizing operations and customer experience"
-                  items={['Legacy system modernization', 'Customer experience platforms', 'Data analytics', 'Automation']}
-                />
-                <IndustryCard
-                  title="Strategic Consulting"
-                  description="Navigating market and technology shifts"
-                  items={['Business model innovation', 'Technology strategy', 'Market expansion', 'Risk management']}
-                />
-                <IndustryCard
-                  title="Talent & Scaling"
-                  description="Building teams for growth"
-                  items={['Technical recruitment', 'Team building', 'Project leadership', 'Organizational development']}
-                />
-              </div>
-            </div>
-
-            {/* International Institutions */}
-            <div className="content-theme-panel-soft p-8">
-              <h3 className="text-heading font-display font-bold text-2xl mb-4">International Institutions & Diplomatic Bodies</h3>
-              <p className="text-lg text-body mb-8 max-w-3xl">
-                We work with international institutions on systems, strategy, and operations that serve global constituencies.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <IndustryCard
-                  title="Institutional Systems"
-                  description="Technology infrastructure for multinational operations"
-                  items={['Secure communication platforms', 'Multi-language support', 'Compliance systems', 'Stakeholder engagement']}
-                />
-                <IndustryCard
-                  title="Governance & Transparency"
-                  description="Systems supporting institutional accountability"
-                  items={['Public reporting platforms', 'Data transparency', 'Decision documentation', 'Audit systems']}
-                />
-                <IndustryCard
-                  title="Strategic Collaboration"
-                  description="Facilitating cross-institutional partnership"
-                  items={['Collaborative platforms', 'Knowledge sharing', 'Programme coordination', 'Impact measurement']}
-                />
-              </div>
-            </div>
+      {SECTORS.map((sector, i) => (
+        <section className="block" key={sector.id} aria-labelledby={sector.id}>
+          <h2 id={sector.id}>{sector.title}</h2>
+          <p>{sector.note}</p>
+          <div className="enclosures enclosures--three">
+            {sector.groups.map((g, j) => (
+              <Enclosure
+                key={g.title}
+                label={`Encl. ${i + 1}.${j + 1}`}
+                title={g.title}
+                note={g.note}
+                items={g.items}
+              />
+            ))}
           </div>
         </section>
+      ))}
 
-        {/* Key Outcomes */}
-        <section className="section-padding bg-surface-light">
-          <div className="container-x">
-            <SectionHeading
-              eyebrow="OUTCOMES"
-              heading="What organizations achieve with us"
-            />
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { title: 'Improved Decision-Making', desc: 'Data-driven insights for better organizational choices' },
-                { title: 'Modernized Operations', desc: 'Efficient, secure, transparent institutional systems' },
-                { title: 'Strengthened Service Delivery', desc: 'Better outcomes for citizens, beneficiaries, and stakeholders' },
-                { title: 'Aligned Technology', desc: 'Systems that serve institutional mission and values' },
-              ].map((outcome, i) => (
-                <div key={i} className="bg-white p-6 rounded-lg border border-border info-card card-lift">
-                  <h4 className="text-heading font-display font-bold mb-3">{outcome.title}</h4>
-                  <p className="text-body text-sm">{outcome.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <CTABanner
-          headline="Let's discuss your sector's unique opportunities"
-          buttonText="Schedule a Conversation"
-          buttonHref="/contact"
+      <section className="block" aria-labelledby="aims">
+        <h2 id="aims">What the work is meant to change</h2>
+        <Schedule
+          rows={[
+            { term: 'Decisions', detail: 'Taken with better evidence, and recorded.' },
+            { term: 'Operations', detail: 'Efficient, secure and open to inspection.' },
+            { term: 'Service', detail: 'Better results for citizens, beneficiaries and partners.' },
+            { term: 'Technology', detail: 'Chosen to serve the institution’s mandate and values.' },
+          ]}
         />
-      </main>
-      <Footer />
-    </>
+      </section>
+
+      <Ends href="/partners/" label="Turn to Tab 5: Partnerships" />
+    </Dossier>
   )
 }
