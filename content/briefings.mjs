@@ -234,7 +234,7 @@ export const BRIEFINGS = [
       },
       {
         lead: 'Comment',
-        text: 'Transparency works when it is routine. Arrangements that depend on a crisis to prompt disclosure arrive too late to help.',
+        text: 'Transparency works when it is routine. Arrangements that depend on a crisis to prompt disclosure arrive too late to help, and are read as damage control by the people they were meant to reassure.',
       },
     ],
   },

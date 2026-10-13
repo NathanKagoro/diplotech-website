@@ -401,15 +401,27 @@ a {
 }
 
 .routing dl > div {
-  padding: 3px 0;
+  display: grid;
+  grid-template-columns: 7.4rem 1fr;
+  gap: 8px;
+  align-items: baseline;
+  padding: 2px 0;
 }
 
 .routing dt {
   color: var(--teal);
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+}
+
+/* On a phone the cable header keeps reference, subject and classification. */
+@media (max-width: 559px) {
+  .routing dl > div:nth-child(2),
+  .routing dl > div:nth-child(3) {
+    display: none;
+  }
 }
 
 .routing dt::after {
@@ -417,6 +429,7 @@ a {
 }
 
 .routing dd {
+  font-size: 0.9375rem;
   text-transform: uppercase;
   letter-spacing: 0.02em;
 }
@@ -785,15 +798,10 @@ h3 {
   height: auto;
 }
 
-.globe-land {
-  fill: var(--teal);
-  fill-opacity: 0.11;
-}
-
 .cover__seal {
   position: absolute;
   left: -2%;
-  bottom: 13%;
+  bottom: 19%;
   width: 29%;
   height: auto;
   transform: rotate(-9deg);
@@ -1161,10 +1169,18 @@ article > h1 {
 
 @media (min-width: 560px) {
   .routing dl > div {
-    display: grid;
     grid-template-columns: 10.5rem 1fr;
     gap: 16px;
     padding: 1px 0;
+  }
+
+  .routing dt {
+    font-size: 0.8125rem;
+    letter-spacing: 0.1em;
+  }
+
+  .routing dd {
+    font-size: 1rem;
   }
 
   .schedule > div {
@@ -1309,7 +1325,7 @@ article > h1 {
     grid-template-areas:
       'head plate'
       'paras plate';
-    grid-template-columns: 1fr minmax(340px, 430px);
+    grid-template-columns: 1fr minmax(340px, 470px);
     gap: 0 44px;
     align-items: start;
   }

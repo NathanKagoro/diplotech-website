@@ -165,8 +165,8 @@ export function Dossier({
           <div className="footer__note">
             <h2>About this file</h2>
             <p>
-              {DISCLOSURE} The briefings are written for the concept and the message form sends
-              nothing.
+              A design concept by Nathan Kagoro. The briefings were written for it, and the message
+              form sends nothing.
             </p>
             <a className="footer__back" href="https://nathankagoro.com">
               <span aria-hidden="true">&larr;</span> nathankagoro.com
