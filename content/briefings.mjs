@@ -78,7 +78,7 @@ export const BRIEFINGS = [
       },
       {
         lead: 'Share before you build',
-        text: 'Peer organisations have usually solved the same problem. A shared template, a common data standard or a jointly funded administrator is often worth more than a bespoke platform. Donors can help by funding maintenance as readily as they fund launches.',
+        text: 'Peer organisations have usually solved the same problem. A shared template, a common data standard or a jointly funded administrator is often worth more than a custom platform. Donors can help by funding maintenance as readily as they fund launches.',
       },
       {
         lead: 'Comment',

@@ -33,8 +33,8 @@ export default function CoverPage() {
             Solutions
           </h1>
           <p className="standfirst">
-            A consultancy for the ground where diplomacy and technology meet, set out as the file a
-            desk officer would hand you.
+            A consultancy for diplomatic and public institutions that need technology, set out as the
+            file a desk officer would hand you.
           </p>
         </div>
 

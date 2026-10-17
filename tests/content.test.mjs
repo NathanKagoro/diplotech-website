@@ -47,7 +47,7 @@ test('briefings contain no figures, percentages, quotations or dates', () => {
 
 test('briefings use no em-dash asides', () => {
   for (const b of BRIEFINGS) {
-    for (const p of b.paras) assert.doesNotMatch(p.text, /—/, `No. ${b.n}`)
+    for (const p of b.paras) assert.doesNotMatch(p.text, /\u2014/, `No. ${b.n}`)
   }
 })
 

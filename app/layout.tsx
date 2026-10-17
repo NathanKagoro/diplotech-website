@@ -26,7 +26,7 @@ const serif = localFont({
 })
 
 const description =
-  'A concept site for a consultancy working where diplomacy meets technology, laid out as a diplomatic dossier. Designed for a prospective client; not a trading company.'
+  'A concept site for a consultancy that would build, staff and support software for ministries, missions and international bodies, laid out as a diplomatic dossier. Designed for a prospective client; not a trading company.'
 
 export const viewport: Viewport = {
   width: 'device-width',

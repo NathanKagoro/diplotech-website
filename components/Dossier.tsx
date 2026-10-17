@@ -118,7 +118,7 @@ export function Dossier({
               </div>
               <div>
                 <dt>Classification</dt>
-                <dd>Unclassified &ndash; concept</dd>
+                <dd>Unclassified (concept)</dd>
               </div>
             </dl>
             <Stamp lines={['Unclassified', 'Concept']} className="routing__stamp" />

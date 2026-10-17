@@ -1,7 +1,7 @@
 # Diplotech Solutions (concept site)
 
-A website concept for a consultancy working where diplomacy meets technology, laid out as a
-diplomatic dossier: a folder with tabbed dividers, and one typewritten cable per page.
+A website concept for a consultancy that would build, staff and support software for ministries,
+missions and international bodies, laid out as a diplomatic dossier: a folder with tabbed dividers, and one typewritten cable per page.
 
 It was designed for a prospective client who did not go ahead. **Diplotech Solutions is not a
 trading company.** The site says so at the top of every page.

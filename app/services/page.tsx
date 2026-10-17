@@ -10,7 +10,7 @@ export const metadata = {
 
 const CAPABILITIES: Record<string, string[]> = {
   'software-development': [
-    'Bespoke software for complicated casework',
+    'Custom software for complicated casework',
     'Systems planning and transformation advice',
     'AI-assisted workflows and decision support',
     'Reporting tools and process design',

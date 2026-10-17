@@ -19,7 +19,7 @@ const KINDS = [
       {
         title: 'Integrators',
         note: 'For joint delivery of larger systems.',
-        items: ['Systems integration', 'Bespoke development capacity', 'Implementation support'],
+        items: ['Systems integration', 'Custom development capacity', 'Implementation support'],
       },
       {
         title: 'Specialist firms',

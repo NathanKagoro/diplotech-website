@@ -3,7 +3,7 @@ import { Dossier, Enclosure, Ends, Schedule } from '@/components/Dossier'
 export const metadata = {
   title: 'Annex A: Software development and consultancy',
   description:
-    'Annex A of the Diplotech concept: bespoke software and transformation advice for governments and institutions.',
+    'Annex A of the Diplotech concept: custom software and transformation advice for governments and institutions.',
 }
 
 export default function SoftwareDevelopmentPage() {
@@ -19,7 +19,7 @@ export default function SoftwareDevelopmentPage() {
     >
       <h1>Software development and consultancy</h1>
       <p className="standfirst">
-        Bespoke systems for institutions whose work does not fit a product off the shelf, and advice
+        Custom systems for institutions whose work does not fit a product off the shelf, and advice
         on what to build, buy or leave alone.
       </p>
 
@@ -27,7 +27,7 @@ export default function SoftwareDevelopmentPage() {
         <h2 id="deliver">What would be delivered</h2>
         <Schedule
           rows={[
-            { term: 'Bespoke software', detail: 'Applications shaped to the client’s casework and its security requirements.' },
+            { term: 'Custom software', detail: 'Applications shaped to the client’s casework and its security requirements.' },
             { term: 'Systems planning', detail: 'Architecture and sequencing for systems that have to work together.' },
             { term: 'Transformation advice', detail: 'Guidance on modernising systems and the ways of working around them.' },
             { term: 'AI-assisted workflows', detail: 'Automation and decision support, with a named person accountable for each decision.' },
@@ -45,7 +45,7 @@ export default function SoftwareDevelopmentPage() {
             label="Example 1"
             title="Visa processing"
             note="Case handling for consular sections."
-            items={['Bespoke development', 'Security designed in from the start', 'Rules for more than one jurisdiction']}
+            items={['Custom development', 'Security designed in from the start', 'Rules for more than one jurisdiction']}
           />
           <Enclosure
             label="Example 2"

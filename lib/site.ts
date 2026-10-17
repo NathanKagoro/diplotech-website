@@ -35,7 +35,7 @@ export const SERVICES = [
     annex: 'A',
     title: 'Software development and consultancy',
     short: 'Software',
-    line: 'Bespoke systems and advice on how to plan, buy and run them.',
+    line: 'Custom systems and advice on how to plan, buy and run them.',
   },
   {
     slug: 'it-recruitment',
